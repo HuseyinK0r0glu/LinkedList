@@ -2,7 +2,7 @@ public class List <T>{
 
     private ListNode<T> firstNode;
     private ListNode<T> lastNode;
-    private String name;
+    private final String name;
 
     public List() {
         this("list");
@@ -25,7 +25,7 @@ public class List <T>{
         if(isEmpty()){
             firstNode = lastNode = new ListNode<>(insertItem);
         }else{
-            lastNode = lastNode.nextNode = new ListNode<T>(insertItem);
+            lastNode = lastNode.nextNode = new ListNode<>(insertItem);
         }
     }
 
@@ -86,9 +86,6 @@ public class List <T>{
     }
 
     public boolean isEmpty(){
-        if(firstNode == null){
-            return true;
-        }
-        return false;
+        return firstNode == null;
     }
 }
